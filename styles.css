@@ -22,12 +22,36 @@ h2 {
   margin-bottom: 1rem;
   color: #222;
 }
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+  }
+  img.profile {
+    width: 100px;
+  }
+}
+
 img.profile {
   width: 150px;
   border-radius: 50%;
   display: block;
   margin: 1rem auto;
 }
+#skills ul {
+  list-style: none;
+  padding: 0;
+}
+#skills li {
+  background: #fff;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+#skills li strong {
+  color: teal;
+}
+
 .project {
   margin-bottom: 1.5rem;
   padding: 1rem;
