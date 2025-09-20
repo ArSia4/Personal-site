@@ -1,64 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Milie — Portfolio</title>
+
+  <!-- Favicon (replace with your own 32x32 favicon file at /favicon.png) -->
+  <link rel="icon" href="favicon.png" type="image/png"/>
+
   <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <p>Welcome to my personal website 🚀</p>
-</nav>
-  </header>
-  <main>
-    <section id="about">
-    <h2>About Me</h2>
-    <img src="https://up.yimg.com/ib/th/id/OIP.Gc94mo4hbciYBDSJwWzsAAHaHa?pid=Api&rs=1&c=1&qlt=95&w=104&h=104" alt="My Photo" class="profile">
-    <p>
-      Hey there! I'm Milie, a Computer Science student who loves exploring tech and trying out new ideas.  
-  I’ve worked on projects in web development, AI, and even dabbled in cybersecurity.  
-  During my internships, I got to experiment with full stack development, MERN + AI, and picked up a lot of practical skills along the way.  
-  I enjoy learning, building cool stuff, and seeing my ideas come to life. 🚀
-    </p>
-  </section>
-  <section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Programming Languages:</strong> C, SQL, Python</li>
-    <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
-    <li><strong>Core Strengths:</strong> Adaptable, Quick Learner, Willingness to Learn</li>
-  </ul>
-</section>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Milie</h1>
+        <p class="tag">Student • Web · AI · Cybersecurity</p>
+      </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>📱 MediTrack</h3>
-      <p>A medicine tracking app with login and reminders.</p>
-      <a href="https://github.com/myusername/MediTrack" target="_blank">Source Code</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
     </div>
-    <div class="project">
-      <h3>🔒 CredHex</h3>
-      <p>A digital vault to store and view certificates securely.</p>
-      <a href="https://github.com/myusername/CredHex" target="_blank">Source Code</a>
-    </div>
-    <div class="project">
-      <h3>🌌 Project Zelion</h3>
-      <p>A modern dark-themed React portfolio site with glassmorphism style.</p>
-      <a href="https://github.com/myusername/ProjectZelion" target="_blank">Source Code</a>
-    </div>
-  </section>
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:milelsa004@gmail.com">milelsa004@gmail.com.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/milie-mathews-588a05251" target="_blank">linkedin.com/in/milie-mathews-588a05251</a></p>
-    <p>GitHub: <a href="https://github.com/ArSia4" target="_blank">github.com/ArSia4</a></p>
-  </section>
+  </header>
+
+  <main>
+    <section id="about" class="hero container">
+      <div class="hero-content">
+        <img src="https://up.yimg.com/ib/th/id/OIP.Gc94mo4hbciYBDSJwWzsAAHaHa?pid=Api&rs=1&c=1&qlt=95&w=104&h=104" alt="Milie" class="profile">
+        <div>
+          <h2>Hey there — I’m Milie 👋</h2>
+          <p class="lead">
+            I’m a Computer Science student who loves trying new tech and building small tools that solve real problems.
+            I’ve worked on web projects, experimented with AI for resume screening, and explored cybersecurity basics during internships.
+            I enjoy learning fast, shipping things, and turning ideas into working prototypes. 🚀
+          </p>
+          <p class="meta">Sree Buddha College of Engineering — B.Tech CSE (expected 2026)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Programming:</strong> C · SQL · Python</li>
+        <li><strong>Web:</strong> HTML · CSS · JavaScript</li>
+        <li><strong>Tooling:</strong> Git · VS Code · SQLite</li>
+        <li><strong>Core strengths:</strong> Adaptable · Quick Learner · Curious</li>
+      </ul>
+    </section>
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Want to collaborate or ask about a project? Reach me at:</p>
+      <p><strong>Email:</strong> <a href="mailto:milelsa004@gmail.com">milelsa004@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/MilMat4" target="_blank" rel="noopener">github.com/MilMat4</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/milie-mathews-588a05251" target="_blank" rel="noopener">linkedin.com/in/milie-mathews-588a05251</a></p>
+    </section>
   </main>
-  <footer>
-    <p>© 2025 MilieMathews. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Milie Elizabeth Mathews · Built with HTML & CSS</p>
+    </div>
   </footer>
+
+  <script>
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  const header = document.querySelector('.site-header');
+
+  // Mobile nav toggle
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.main-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Shrink navbar on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('shrink');
+    } else {
+      header.classList.remove('shrink');
+    }
+  });
+</script>
 </body>
 </html>
